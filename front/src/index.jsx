@@ -7,7 +7,7 @@ setNavigation(Navigation);
 setRoutes(Routes);
 
 // event for delete plugin
-elem.addEventListener('face:delete', function (e) {
+elem.addEventListener('motion:delete', function (e) {
   deleteRoutes(Routes);
   deleteNavigation(Navigation);
 }, false);
