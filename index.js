@@ -45,7 +45,7 @@ class PluginSample extends Plugin {
           this.dependencies.server.socket.on('askSudo:response', (data) => {
             // echo <password> | sudo -S <command>
 
-            let el = spawn('echo', [data.password, '|', 'sudo', '-S', 'apt-get', 'install', 'motion']);
+            let ls = spawn('echo', [data.password, '|', 'sudo', '-S', 'apt-get', 'install', 'motion']);
 
             ls.stdout.on('data', (data) => {
               console.log(`stdout: ${data}`);
