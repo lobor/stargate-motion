@@ -43,7 +43,22 @@ class PluginSample extends Plugin {
         // })
         if(this.dependencies.server.socket){
           this.dependencies.server.socket.on('askSudo:response', (data) => {
-            console.log(data);
+            // echo <password> | sudo -S <command>
+
+            let el = spawn('echo', [data.password, '|', 'sudo', '-S', 'apt-get', 'install', 'motion']);
+
+            ls.stdout.on('data', (data) => {
+              console.log(`stdout: ${data}`);
+            });
+
+            ls.stderr.on('data', (data) => {
+              console.log(`stderr: ${data}`);
+            });
+
+            ls.on('close', (code) => {
+              console.log(`child process exited with code ${code}`);
+            });
+            // console.log(data);
           });
 
           this.dependencies.server.socket.emit('askSudo');
