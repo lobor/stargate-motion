@@ -14,7 +14,7 @@ class PluginSample extends Plugin {
   }
 
   onBack(){
-
+    console.log(3);
   }
 
   onFront(){
