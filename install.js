@@ -1,3 +1,4 @@
+require('babel/register');
 import { Plugin, success, error, warning } from './../../core/';
 
 var spawn = require('child_process').spawn;
