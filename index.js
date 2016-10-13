@@ -13,7 +13,7 @@ class PluginSample extends Plugin {
     // console.log(Object.keys(this.dependencies));
     // console.log(this.dependencies.server);
     // this.checkMotion();
-    this.dependencies.server.on('onSocket', () => {
+    this.dependencies.server.on('onReloadServer', () => {
       console.log(3);
       this.checkMotion();
     });
