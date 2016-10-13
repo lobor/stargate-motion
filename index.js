@@ -1,4 +1,4 @@
-import { Plugin } from './../../core/';
+import { Plugin, success, error, warning } from './../../core/';
 
 
 class PluginSample extends Plugin {
@@ -10,15 +10,37 @@ class PluginSample extends Plugin {
   }
 
   onDependencies(){
+    // console.log(Object.keys(this.dependencies));
+    // console.log(this.dependencies.server);
+    // this.checkMotion();
 
+    this.dependencies.server.on('onSocket', () => {
+      this.checkMotion();
+    });
   }
 
   onBack(){
-    console.log(3);
+
   }
 
   onFront(){
 
+  }
+
+  checkMotion(){
+    var spawn = require('child_process').spawn;
+    let which = spawn('which', ['motion']);
+
+    which.on('close', (code) => {
+      if(1 === code){
+        error('Sorry, this module requires Motion to be installed');
+        // this.dependencies.server.on('onSocket', () => {
+        //   console.log(Object.keys(this.dependencies.server));
+        // })
+        this.dependencies.server.socket.emit('testinstallation');
+        // console.log(this.dependencies.server);
+      }
+    });
   }
 }
 
