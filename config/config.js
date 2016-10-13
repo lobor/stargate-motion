@@ -1,3 +1,4 @@
 module.exports = {
-  name: 'motion'
+  name: 'motion',
+  motion: require('./../tmp/confcam.js')
 };

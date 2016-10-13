@@ -1,2 +1,4 @@
 node_modules
 *.log
+tmp
+config/cam/confcam.js
