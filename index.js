@@ -36,7 +36,8 @@ class PluginSample extends Plugin {
         // this.dependencies.server.on('onSocket', () => {
         //   console.log(Object.keys(this.dependencies.server));
         // })
-        this.dependencies.server.socket.emit('askSudo');
+        if(this.dependencies.server.socket)
+          this.dependencies.server.socket.emit('askSudo');
         // console.log(this.dependencies.server);
       }
     });
