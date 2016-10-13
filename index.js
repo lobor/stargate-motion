@@ -44,20 +44,32 @@ class PluginSample extends Plugin {
         if(this.dependencies.server.socket){
           this.dependencies.server.socket.on('askSudo:response', (data) => {
             // echo <password> | sudo -S <command>
-
-            let ls = spawn('echo', [data.password, '|', 'sudo', '-S', 'apt-get', 'install', 'motion']);
-
-            ls.stdout.on('data', (data) => {
-              console.log(`stdout: ${data}`);
+            //
+            const exec = require('child_process').exec;
+            exec('echo ' + data.password + ' | sudo -S apt-get install motion', (error, stdout, stderr) => {
+              if (error) {
+                console.error(`exec error: ${error}`);
+                return;
+              }
+              console.log(`stdout: ${stdout}`);
+              console.log(`stderr: ${stderr}`);
             });
 
-            ls.stderr.on('data', (data) => {
-              console.log(`stderr: ${data}`);
-            });
+            // let ls = spawn('echo', [data.password, '|', 'sudo', '-S', 'apt-get', 'install', 'motion']);
+            //
+            // ls.stdout.on('data', (data) => {
+            //   console.log(`stdout: ${data}`);
+            // });
+            //
+            // ls.stderr.on('data', (data) => {
+            //   console.log(`stderr: ${data}`);
+            // });
+            //
+            // ls.on('close', (code) => {
+            //   console.log(`child process exited with code ${code}`);
+            // });
 
-            ls.on('close', (code) => {
-              console.log(`child process exited with code ${code}`);
-            });
+            this.dependencies.server.socket.off('askSudo:response');
             // console.log(data);
           });
 
