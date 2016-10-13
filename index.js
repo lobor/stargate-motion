@@ -18,6 +18,11 @@ class PluginSample extends Plugin {
     });
   }
 
+  remove(){
+    super.remove();
+    this.dependencies.server.off('onReloadServer');
+  }
+
   onBack(){
 
   }
