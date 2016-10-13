@@ -5,7 +5,6 @@ export default [
 		'name': 'config:motion',
 		'dep': ['webcam', 'motion'],
 		'call': function(data, fc){
-			console.log('toto');
 			fc({
 				toto: 'toto'
 			});

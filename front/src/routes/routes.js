@@ -1,5 +1,5 @@
-import Config from 'views/config/Config.jsx';
-import Video from 'views/video/Video.jsx';
+import Config from './../views/config/Config.jsx';
+import Video from './../views/video/Video.jsx';
 
 module.exports = [
 	{

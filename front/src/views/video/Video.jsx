@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-
 import MediaVideo from './../../components/media/video.jsx';
 
-class Video extends Component {
+class Video extends React.Component {
 	constructor(...args){
 		super(...args);
 
@@ -28,7 +26,7 @@ class Video extends Component {
 			})
 		}
 		else{
-			html = 'Thea are not webcam';
+			html = 'There are not webcam';
 		}
 
     return (
