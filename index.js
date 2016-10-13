@@ -32,6 +32,7 @@ class PluginSample extends Plugin {
     let which = spawn('which', ['motion']);
 
     which.on('close', (code) => {
+      console.log(code);
       if(1 === code){
         error('Sorry, this module requires Motion to be installed');
         // this.dependencies.server.on('onSocket', () => {
