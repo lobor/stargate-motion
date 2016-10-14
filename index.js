@@ -6,7 +6,7 @@ const os = require('os');
 const motion = require('./lib/motion');
 
 
-class PluginSample extends Plugin {
+class Motion extends Plugin {
   get props() {
     return {
       dependencies: [],
@@ -20,7 +20,7 @@ class PluginSample extends Plugin {
     this.motion = new motion();
   }
 
-  onDependencies(){
+  onLoad(){
     this.dependencies.server.on('onReloadServer', () => {
       this.checkMotion();
     });
@@ -83,9 +83,6 @@ class PluginSample extends Plugin {
     });
   }
 
-  onFront(){
-
-  }
 
   checkMotion(){
     let which = spawn('which', ['motion']);
@@ -112,4 +109,4 @@ class PluginSample extends Plugin {
 }
 
 
-export default PluginSample;
+export default Motion;
