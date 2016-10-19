@@ -1,13 +1,20 @@
 var fs = require('fs');
 
 export default [
+	// {
+	// 	'name': 'config:motion',
+	// 	'dep': ['motion'],
+	// 	'call': function(data, fc){
+	// 		fc({
+	// 			toto: 'toto'
+	// 		});
+	// 	}
+	// },
 	{
-		'name': 'config:motion',
-		'dep': ['webcam', 'motion'],
+		'name': 'motion:get',
+		'depPlugin': ['motion'],
 		'call': function(data, fc){
-			fc({
-				toto: 'toto'
-			});
+			fc(this.motion.getCam());
 		}
 	},
 	// {

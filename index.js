@@ -43,7 +43,7 @@ class Motion extends Plugin {
       conf: data,
       path: __dirname + '/tmp/',
       name: name
-    })
+    });
   }
 
   writeConf(params){
@@ -51,7 +51,7 @@ class Motion extends Plugin {
     fs.writeFileSync(params.path + params.name + '.conf', this.convertJsonToConf(params.conf));
   }
 
-  onBack(){
+  loadCamera(){
     exec('ls /dev/video*', (error, stdout, stderr) => {
       let webCam = stdout.split('\n'); // output => ['/dev/video0', '/dev/video1', '']
       let configJson = {};
@@ -60,7 +60,6 @@ class Motion extends Plugin {
     	webCam.pop();
 
       // console.log(this.props.conf.motion);
-
       if(webCam.length){
         webCam.forEach((el, i) => {
           try {
@@ -79,6 +78,14 @@ class Motion extends Plugin {
         });
 
         this.motion.setConfig(this.props.conf.motion);
+
+        this.motion.setConfigPath(__dirname + '/tmp/');
+        this.writeConf({
+          conf: this.props.conf.motion,
+          path: __dirname + '/tmp/',
+          name: 'confcam'
+        });
+        this.start();
       }
     });
   }
@@ -97,6 +104,7 @@ class Motion extends Plugin {
               if (error) {
                 return;
               }
+              this.loadCamera();
               fc({success: true});
             });
           });
@@ -104,7 +112,15 @@ class Motion extends Plugin {
           that.dependencies.server.socket.emit('askSudo');
         }
       }
+      else{
+        this.loadCamera();
+      }
     });
+  }
+
+  start(){
+    this.motion.start();
+      // console.log(this);
   }
 }
 

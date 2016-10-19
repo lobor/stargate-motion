@@ -40,9 +40,8 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53,7 +52,7 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _navigation = __webpack_require__(7);
+	var _navigation = __webpack_require__(10);
 
 	var _navigation2 = _interopRequireDefault(_navigation);
 
@@ -69,8 +68,7 @@
 	}, false);
 
 /***/ },
-
-/***/ 1:
+/* 1 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -108,17 +106,16 @@
 	};
 
 /***/ },
-
-/***/ 2:
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _Config = __webpack_require__(8);
+	var _Config = __webpack_require__(3);
 
 	var _Config2 = _interopRequireDefault(_Config);
 
-	var _Video = __webpack_require__(10);
+	var _Video = __webpack_require__(7);
 
 	var _Video2 = _interopRequireDefault(_Video);
 
@@ -135,113 +132,7 @@
 	}];
 
 /***/ },
-
-/***/ 5:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _style = __webpack_require__(6);
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Notify = function (_React$Component) {
-	  _inherits(Notify, _React$Component);
-
-	  function Notify() {
-	    var _ref;
-
-	    _classCallCheck(this, Notify);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    var _this = _possibleConstructorReturn(this, (_ref = Notify.__proto__ || Object.getPrototypeOf(Notify)).call.apply(_ref, [this].concat(args)));
-
-	    _this.state = {
-	      msg: false,
-	      type: 'success',
-	      open: false
-	    };
-
-	    return _this;
-	  }
-
-	  _createClass(Notify, [{
-	    key: 'show',
-	    value: function show(option) {
-	      this.setState(option);
-
-	      this.setState({ open: true });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var html = false;
-	      html = React.createElement(Ui.Snackbar, {
-	        open: this.state.open,
-	        message: this.state.msg,
-	        bodyStyle: _style.TypeNotify[this.state.type],
-	        autoHideDuration: 4000
-	      });
-	      // }
-
-	      return html;
-	    }
-	  }]);
-
-	  return Notify;
-	}(React.Component);
-
-	exports.default = Notify;
-
-/***/ },
-
-/***/ 6:
-/***/ function(module, exports) {
-
-	'use strict';
-
-	exports.TypeNotify = {
-	  'success': {
-	    backgroundColor: '#32e432'
-	  },
-	  'error': {
-	    backgroundColor: 'red'
-	  }
-	};
-
-/***/ },
-
-/***/ 7:
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = [{
-		"label": "Motion",
-		"href": "/motion/config",
-		"icon": "camera alt"
-	}, {
-		"label": "Camera",
-		"href": "/camera",
-		"icon": "videocam"
-	}];
-
-/***/ },
-
-/***/ 8:
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -252,7 +143,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _config = __webpack_require__(9);
+	var _config = __webpack_require__(4);
 
 	var _config2 = _interopRequireDefault(_config);
 
@@ -304,8 +195,7 @@
 	exports.default = Config;
 
 /***/ },
-
-/***/ 9:
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -479,8 +369,93 @@
 	exports.default = Config;
 
 /***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
 
-/***/ 10:
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _style = __webpack_require__(6);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Notify = function (_React$Component) {
+	  _inherits(Notify, _React$Component);
+
+	  function Notify() {
+	    var _ref;
+
+	    _classCallCheck(this, Notify);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    var _this = _possibleConstructorReturn(this, (_ref = Notify.__proto__ || Object.getPrototypeOf(Notify)).call.apply(_ref, [this].concat(args)));
+
+	    _this.state = {
+	      msg: false,
+	      type: 'success',
+	      open: false
+	    };
+
+	    return _this;
+	  }
+
+	  _createClass(Notify, [{
+	    key: 'show',
+	    value: function show(option) {
+	      this.setState(option);
+
+	      this.setState({ open: true });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var html = false;
+	      html = React.createElement(Ui.Snackbar, {
+	        open: this.state.open,
+	        message: this.state.msg,
+	        bodyStyle: _style.TypeNotify[this.state.type],
+	        autoHideDuration: 4000
+	      });
+	      // }
+
+	      return html;
+	    }
+	  }]);
+
+	  return Notify;
+	}(React.Component);
+
+	exports.default = Notify;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	exports.TypeNotify = {
+	  'success': {
+	    backgroundColor: '#32e432'
+	  },
+	  'error': {
+	    backgroundColor: 'red'
+	  }
+	};
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -491,7 +466,11 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _video = __webpack_require__(45);
+	var _Loading = __webpack_require__(11);
+
+	var _Loading2 = _interopRequireDefault(_Loading);
+
+	var _video = __webpack_require__(8);
 
 	var _video2 = _interopRequireDefault(_video);
 
@@ -519,8 +498,7 @@
 
 			_this.state = {
 				webcam: [],
-				visio: '',
-				score: ''
+				render: false
 			};
 			return _this;
 		}
@@ -530,8 +508,8 @@
 			value: function componentDidMount() {
 				var _this2 = this;
 
-				this.context.io.run('video:get', {}, function (data) {
-					_this2.setState(data);
+				this.context.io.run('motion:get', {}, function (data) {
+					_this2.setState({ webcam: data, render: true });
 				});
 			}
 		}, {
@@ -548,8 +526,8 @@
 				}
 
 				return React.createElement(
-					'div',
-					null,
+					_Loading2.default,
+					{ render: this.state.render },
 					html
 				);
 			}
@@ -564,8 +542,7 @@
 	exports.default = Video;
 
 /***/ },
-
-/***/ 45:
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -576,7 +553,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _style = __webpack_require__(46);
+	var _style = __webpack_require__(9);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -665,8 +642,7 @@
 	exports.default = Video;
 
 /***/ },
-
-/***/ 46:
+/* 9 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -689,6 +665,94 @@
 	  textAlign: 'center'
 	};
 
-/***/ }
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
 
-/******/ });
+	"use strict";
+
+	module.exports = [
+	// {
+	// 	"label": "Motion",
+	// 	"href": "/motion/config",
+	// 	"icon": "camera alt"
+	// },
+	{
+		"label": "Camera",
+		"href": "/camera",
+		"icon": "videocam"
+	}];
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _style = __webpack_require__(12);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Loading = function (_React$Component) {
+		_inherits(Loading, _React$Component);
+
+		function Loading() {
+			var _ref;
+
+			_classCallCheck(this, Loading);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _possibleConstructorReturn(this, (_ref = Loading.__proto__ || Object.getPrototypeOf(Loading)).call.apply(_ref, [this].concat(args)));
+		}
+
+		_createClass(Loading, [{
+			key: 'render',
+			value: function render() {
+				if (this.props.render) {
+					if (this.props.children.length) {
+						return React.createElement(
+							'div',
+							null,
+							this.props.children.map(function (el, i) {
+								return el;
+							})
+						);
+					} else {
+						return this.props.children;
+					}
+				}
+				return React.createElement(Ui.CircularProgress, { style: _style.style, size: 80, thickness: 5 });
+			}
+		}]);
+
+		return Loading;
+	}(React.Component);
+
+	exports.default = Loading;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports.style = {
+	  left: '50%',
+	  marginLeft: '-40px'
+	};
+
+/***/ }
+/******/ ]);

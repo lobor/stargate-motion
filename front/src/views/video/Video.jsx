@@ -1,3 +1,4 @@
+import Loading from 'components/loading/Loading';
 import MediaVideo from './../../components/media/video.jsx';
 
 class Video extends React.Component {
@@ -6,14 +7,13 @@ class Video extends React.Component {
 
 		this.state = {
 			webcam:[],
-			visio: '',
-			score: ''
+			render: false,
 		};
 	}
 
 	componentDidMount(){
-		this.context.io.run('video:get', {}, (data) => {
-			this.setState(data);
+		this.context.io.run('motion:get', {}, (data) => {
+			this.setState({webcam: data, render: true});
 		})
 	}
 
@@ -30,9 +30,9 @@ class Video extends React.Component {
 		}
 
     return (
-      <div>
+      <Loading render={this.state.render}>
 				{html}
-      </div>
+      </Loading>
     )
 	}
 }
