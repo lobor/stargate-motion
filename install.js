@@ -8,20 +8,3 @@ try {
 } catch (e) {
   fs.mkdirSync('./tmp/', 0777);
 }
-
-
-try {
-  fs.accessSync('./tmp/confcam.js', fs.F_OK);
-} catch (e) {
-  let cpConfCam = spawn('cp', ['./config/cam/confcam.js.dist', './tmp/confcam.js']);
-
-  cpConfCam.stderr.on('data', (data) => {
-    cs.error('Copy conf cam', data);
-  });
-
-  cpConfCam.on('close', (code) => {
-    if(code === 0){
-      cs.success('Copy conf cam');
-    }
-  });
-}
