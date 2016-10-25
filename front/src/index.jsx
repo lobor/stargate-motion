@@ -1,12 +1,13 @@
 import { setNavigation, setRoutes, deleteNavigation, deleteRoutes, setConfig } from './../../../../core/toolboxFront.js';
 
 var conf = require('./../../config/config');
+require('./languages/languages');
 
 import Routes from './routes/routes';
 import Navigation from './routes/navigation';
 import Config from './routes/config';
 
-setNavigation(Navigation);
+setNavigation(Navigation, conf.name);
 setRoutes(Routes);
 setConfig(conf.name, Config);
 

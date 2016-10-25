@@ -13,7 +13,6 @@ class Video extends React.Component{
 
   componentWillMount(){
 		this.context.io.on('fr:result', (data) => {
-      console.log(data);
       if(this.props.port === data.port){
         var name = '';
   			var score = '';

@@ -26,7 +26,7 @@ class Video extends React.Component {
 			})
 		}
 		else{
-			html = 'There are not webcam';
+			html = Lang.motion.noWebcam;
 		}
 
     return (

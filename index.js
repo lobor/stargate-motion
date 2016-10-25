@@ -77,6 +77,9 @@ class Motion extends Plugin {
           this.motion.addCam(configJson);
         });
 
+        console.log('emit');
+        this.emit('addCam');
+
         this.motion.setConfig(this.props.conf.motion);
 
         this.motion.setConfigPath(__dirname + '/tmp/');

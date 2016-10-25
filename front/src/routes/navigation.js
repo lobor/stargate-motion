@@ -1,11 +1,6 @@
 module.exports = [
-	// {
-	// 	"label": "Motion",
-	// 	"href": "/motion/config",
-	// 	"icon": "camera alt"
-	// },
 	{
-		"label": "Camera",
+		"label": "camera",
 		"href": "/camera",
 		"icon": "videocam"
 	}
