@@ -1,11 +1,5 @@
 
 module.exports = {
-	api: [
-		// API
-		require('./api/config'),
-	],
-	front: [
-		// Page
-		require('./front/video'), // video
-	]
+	api: require('./api/config'),
+	front: require('./front/video')
 };
