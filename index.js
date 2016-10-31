@@ -20,10 +20,8 @@ class Motion extends Plugin {
     this.motion = new motion();
   }
 
-  onLoad(){
-    this.dependencies.server.on('onReloadServer', () => {
-      this.checkMotion();
-    });
+  install(){
+    this.checkMotion();
   }
 
   remove(){
@@ -100,20 +98,13 @@ class Motion extends Plugin {
     which.on('close', (code) => {
       if(1 === code){
         error('Sorry, this module requires Motion to be installed');
-        if(that.dependencies.server.socket){
-          that.dependencies.server.socket.on('askSudo:response', (data, fc) => {
 
-            exec('echo ' + data.password + ' | sudo -S apt-get install motion', (error, stdout, stderr) => {
-              if (error) {
-                return;
-              }
-              this.loadCamera();
-              fc({success: true});
-            });
-          });
-
-          that.dependencies.server.socket.emit('askSudo');
-        }
+        exec('apt-get install motion', (error, stdout, stderr) => {
+          if (error) {
+            return;
+          }
+          this.loadCamera();
+        });
       }
       else{
         this.loadCamera();
@@ -123,7 +114,6 @@ class Motion extends Plugin {
 
   start(){
     this.motion.start();
-      // console.log(this);
   }
 }
 
