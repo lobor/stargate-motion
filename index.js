@@ -24,11 +24,6 @@ class Motion extends Plugin {
     this.checkMotion();
   }
 
-  remove(){
-    super.remove();
-    this.dependencies.server.off('onReloadServer');
-  }
-
   convertJsonToConf(data){
     return JSON.stringify(data)
   		.replace(/({|}|'|")/g, '')
